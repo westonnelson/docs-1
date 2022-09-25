@@ -229,9 +229,9 @@ function ApplyForm() {
               className="uil-mr-8"
             />
             I'm the owner of the website and I have{' '}
-            <InlineLink href={withBaseUrl('docs/who-can-apply')}>
+            {/* <InlineLink href={withBaseUrl('docs/who-can-apply')}>
               read the checklist
-            </InlineLink>
+            </InlineLink> */}
           </LabelText>
 
           <Button

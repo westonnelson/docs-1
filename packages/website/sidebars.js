@@ -16,6 +16,7 @@ module.exports = {
       label: '📖 Introduction',
       items: [
         'why',
+        'features',
         'getting-started',
         'security-and-audits',
         'counterfactual-delegation',
@@ -26,6 +27,8 @@ module.exports = {
       type: 'category',
       label: '🧱 How It Works',
       items: [
+        'how-it-works/delegations',
+        // 'how-it-works/invocations',
         'how-it-works/on-chain-execution',
         'how-it-works/off-chain-signatures',
         'how-it-works/multi-party-delegations',
@@ -33,9 +36,26 @@ module.exports = {
     },
     {
       type: 'category',
-      label: '📱 JavaScript',
+      label: '🔐 Caveat Enforcers',
       items: [
-        'delegatable-js/quickstart',
+        'enforcers/overview',
+        'enforcers/allowed-methods',
+        'enforcers/blocknumber',
+        'enforcers/timestamp',
+        'enforcers/limited-calls',
+        'enforcers/erc20-allowance',
+      ],
+    },
+    {
+      type: 'category',
+      label: '💻 Examples',
+      items: ['frontend/quickstart', 'frontend/react'],
+    },
+    {
+      type: 'category',
+      label: '🔏 Delegatable.js',
+      items: [
+        'delegatable-js/installation',
         'delegatable-js/delegations',
         'delegatable-js/caveat-enforcers',
         'delegatable-js/invocations',
@@ -44,7 +64,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: '⛓️ Solidity',
+      label: '⛓️ Delegatable.sol',
       items: [
         'delegatable-sol/installation',
         'delegatable-sol/delegations',

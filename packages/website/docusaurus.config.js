@@ -54,7 +54,7 @@ const lightCodeTheme = require('prism-react-renderer/themes/github');
         navbar: {
           hideOnScroll: true,
           logo: {
-            alt: 'DocSearch',
+            alt: 'Delegatable',
             src: 'img/logo-simple-dark.png',
             srcDark: 'img/logo-simple-light.png',
           },
@@ -72,14 +72,14 @@ const lightCodeTheme = require('prism-react-renderer/themes/github');
             },
             {
               label: 'Documentation',
-              to: 'docs/how-it-works/counterfactual-assertions',
+              to: 'docs/getting-started',
               position: 'left',
             },
             // right
-            {
-              type: 'docsVersionDropdown',
-              position: 'right',
-            },
+            // {
+            //   type: 'docsVersionDropdown',
+            //   position: 'right',
+            // },
             {
               href: 'https://github.com/algolia/docsearch',
               position: 'right',
@@ -94,7 +94,7 @@ const lightCodeTheme = require('prism-react-renderer/themes/github');
         },
         announcementBar: {
           content:
-            '⭐️ If you like Delegtable, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/delegatable/delegatable.sol">GitHub</a>! ⭐️',
+            '⭐️ If you like Delegatable, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/delegatable/delegatable.sol">GitHub</a>! ⭐️',
         },
         footer: {
           // links: [

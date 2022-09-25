@@ -1,7 +1,23 @@
 ---
-title: Off-Chain Signatures
-sidebar_label: Off-Chain Signatures
+title: Delegations
+sidebar_label: Delegations
 ---
+
+A `Delegation` grants authority to a third-party wallet to act on behalf of the signing wallet.
+
+- **Delegate**: Address receiving delegated permissions/authority.
+- **Authority**: ...
+- **Caveats**: Rules and caveats limiting a delegated addresses permissions.
+
+When first learning about the Delegatable the two most important parameters are `delegate` and `caveats`.
+
+:::warning
+
+Without any `caveats` the third-party has full `permissions` of the signing wallet.
+
+:::
+
+# A Full Delegation and Invocation Flow
 
 The `invoke` method is how `Delegations` and `Invocations` are executed.
 
@@ -17,7 +33,7 @@ const delegation = {
 
 const request_delegationEIP712 = JSON.stringify({
   domain: {
-    name: 'PurposeContract',
+    name: 'ExampleContract',
     version: '1',
     chainId: 1,
     verifyingContract: '0xdEAD000000000000000042069420694206942069',
@@ -34,15 +50,15 @@ const signed_delegationEIP712 = await window.ethereum.send(
 
 const contract = new ethers.Contract(
   address,
-  PurposeContractABI,
-  window.ethereum
+  ExampleContractABI,
+  window.ethereum // Injected provider => Wrap in JsonRpcProvider
 );
 
 const txPopulated = await contract.populateTransaction.setPurpose(
   'The purpose is to be set!'
 );
 
-const intention = {
+const invocation = {
   replayProtection: {
     nonce: '0x01',
     queue: '0x01',
@@ -64,30 +80,36 @@ const intention = {
   ],
 };
 
-const request_intentionEIP712 = JSON.stringify({
+const request_invocationEIP712 = JSON.stringify({
   domain: {
-    name: 'PurposeContract',
+    name: 'ExampleContract',
     version: '1',
     chainId: 1,
     verifyingContract: verifyingContract,
   },
-  message: intention,
+  message: invocation,
   primaryType: 'Invocations',
   types: types,
 });
 
-const signed_intentionEIP712 = await window.ethereum.send(
+const signed_invocationEIP712 = await window.ethereum.send(
   'eth_signTypedData_v4',
-  ['0x0000000000000000000000000000000000000000', request_intentionEIP712]
+  ['0x0000000000000000000000000000000000000000', request_invocationEIP712]
 );
 
 // 🎉 INVOKE THE DELEGATION 🎊
 const txReceipt = await contract.invoke([
   [
     {
-      invocations: intention,
-      signature: signed_intentionEIP712,
+      invocations: invocation,
+      signature: signed_invocationEIP712,
     },
   ],
 ]);
+```
+
+### Javascript
+
+```
+
 ```
