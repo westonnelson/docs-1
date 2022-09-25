@@ -1,11 +1,11 @@
 ---
-title: EIP712 Typed Data
-sidebar_label: Off-Chain Signatures
+title: EIP712 Signed-Typed Data
+sidebar_label: EIP712 Signed-Typed Data
 ---
 
-The Delegatable framework uses the EIP712 signed-typed data.
+The Delegatable framework uses the EIP712 signed-typed data specification for signing Delegations and Invocations.
 
-Signed-typed data is used when Wallets want to add human-readable and machine-verifiable data structures to a decentralized application experiences. Users can more easily understand what they're signing (and the side-effects) while developers can still easily process the data on-chain.
+EIP712 core benefits are human-readable and machine-verifiable data structures. In other words, Users can more easily understand what they're signing (and the side-effects) and we can still process the signature on-chain, for minimal additional gas-costs.
 
 If you are not familiar with the EIP712 specification it's recommended to review the following resources:
 
@@ -16,17 +16,15 @@ If you are not familiar with the EIP712 specification it's recommended to review
 
 ## Data Structures
 
-The Delegatable framework uses multiple (nested) data structures to enable counterfactual, revocable delegation.
-
-Total Data Types: **10**
+The Delegatable framework uses multiple data structures to enable counterfactual, revocable delegation.
 
 - Delegation
-  - delegate: `address`
-  - authority: `bytes32`
-  - caveats: `Caveat[]`
+  - delegate: address
+  - authority: bytes32
+  - caveats: Caveat[]
 - SignedDelegation
-  - delegation: `Delegation`
-  - signature: `bytes`
+  - delegation: Delegation
+  - signature: bytes
 - Caveat
   - enforcer: `address`
   - terms: `byes`
@@ -49,9 +47,13 @@ Total Data Types: **10**
   - signature: `bytes`
   - intentionToRevoke: `IntentionToRevoke`
 
-### Delegatable EIP712 Javascript Example
+### Diving Into the Nested Data Structure
 
-```js
+The Delegatable framework uses 10 distinct data structures.
+
+Top-level data types (e.x. `Invocation`) also include nested data types like `Transaction`. The nested data types, like `Transaction` continue to define data structures matching native transactions with properties like `to`, `gasLimit` and `data`.
+
+```js.
 export const delegatableTypes = {
   EIP712Domain: [
     { name: 'name', type: 'string' },

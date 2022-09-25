@@ -1,6 +1,6 @@
 ---
-title: On-Chain Execution
-sidebar_label: On-Chain Execution
+title: Off-Chain Signatures
+sidebar_label: Off-Chain Signatures
 ---
 
 ## Introduction

@@ -18,29 +18,24 @@ module.exports = {
         'why',
         'getting-started',
         'security-and-audits',
-        // 'what-is-delegatable',
+        'counterfactual-delegation',
+        'eip712-signed-typed-data',
       ],
     },
     {
       type: 'category',
       label: '🧱 How It Works',
       items: [
-        'how-it-works/off-chain-signatures',
         'how-it-works/on-chain-execution',
-        'how-it-works/access-controls',
-        'counterfactual-delegation',
-        // 'how-it-works/caveat-enforcers',
-        // 'how-it-works/invocations',
-        // 'how-it-works/revocations',
+        'how-it-works/off-chain-signatures',
+        'how-it-works/multi-party-delegations',
       ],
     },
     {
       type: 'category',
       label: '📱 JavaScript',
       items: [
-        // 'delegatable-js/installation',
         'delegatable-js/quickstart',
-        'delegatable-js/eip712-signing',
         'delegatable-js/delegations',
         'delegatable-js/caveat-enforcers',
         'delegatable-js/invocations',
@@ -49,7 +44,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: '⛓️ Delegatable.sol',
+      label: '⛓️ Solidity',
       items: [
         'delegatable-sol/installation',
         'delegatable-sol/delegations',
@@ -60,21 +55,17 @@ module.exports = {
     },
     {
       type: 'category',
-      label: '🗺️ Guides & Examples',
+      label: '🗺️ Guides',
       items: [
         'guide/erc20-delegatable',
-        'guide/token-gated-transactions',
         'guide/time-constrained-transactions',
+        'guide/non-blocking-transaction-queue',
       ],
     },
     {
       type: 'category',
-      label: '📚 Theory & Concepts',
-      items: [
-        'concept/object-capabilities',
-        'concept/web-of-trust',
-        'concept/private-state-networks',
-      ],
+      label: '📚 Concepts',
+      items: ['concept/object-capabilities', 'concept/web-of-trust'],
     },
   ],
 };

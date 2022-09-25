@@ -54,7 +54,7 @@ function Home() {
     return (
       <>
         {/* Showcase */}
-        <div className="pb-4 overflow-hidden">
+        <div className="stats pb-4 overflow-hidden">
           <div className="relative max-w-xl mx-auto px-4 md:px-6 lg:px-8 lg:max-w-screen-xl">
             <div className="max-w-screen-xl mx-auto px-4 md:px-6 lg:px-8">
               <div className="max-w-4xl mx-auto text-center">
@@ -76,7 +76,7 @@ function Home() {
                           Library
                         </dt>
                         <dd
-                          className="order-1 text-5xl leading-none font-extrabold text-gray-700"
+                          className="order-1 text-5xl leading-none font-extrabold"
                           aria-describedby="item-1"
                         >
                           1
@@ -86,7 +86,7 @@ function Home() {
                         <dt className="order-2 mt-2 text-lg leading-6 font-medium text-description">
                           Caveat Enforcers
                         </dt>
-                        <dd className="order-1 text-5xl leading-none font-extrabold text-gray-700">
+                        <dd className="order-1 text-5xl leading-none font-extrabold">
                           5+
                         </dd>
                       </div>
@@ -94,7 +94,7 @@ function Home() {
                         <dt className="order-2 mt-2 text-lg leading-6 font-medium text-description">
                           Of Opportunities
                         </dt>
-                        <dd className="order-1 text-5xl leading-none font-extrabold text-gray-700">
+                        <dd className="order-1 text-5xl leading-none font-extrabold">
                           1,000's
                         </dd>
                       </div>

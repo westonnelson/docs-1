@@ -21,6 +21,11 @@ html[data-theme='dark'] {
   --ifm-menu-color-background-active: #21243d;
 }
 
+.dark #hero h1,
+.dark #hero .stats dd {
+  color: #fff !important;
+}
+
 .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.1);
   display: block;

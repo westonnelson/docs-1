@@ -57,7 +57,12 @@ const delegation = {
   delegate: '0xd8da6bf26964af9d7eed9e03e53415d37aa96045', // vitalik.eth
   authority:
     '0x0000000000000000000000000000000000000000000000000000000000000000',
-  caveats: [],
+  caveats: [
+    {
+      enforcer: 'INSERT_ENFORCER_ADDRESS',
+      terms: 'INSERT_CUSTOM_LOGIC',
+    },
+  ],
 };
 
 const eip712Data = JSON.stringify({
