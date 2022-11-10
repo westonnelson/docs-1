@@ -13,7 +13,7 @@ The `BlockNumberEnforcerAfter.sol` smart contract adds the ability to caveat aft
 
 # How It Works
 
-The `terms` field is expected to contain the `block.number`, after which, invocations will be accepted. 
+The `terms` field is expected to contain the `block.number`, after which, invocations will be valid. 
 
 ## Javascript Example
 
