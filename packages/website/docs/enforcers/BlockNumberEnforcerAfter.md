@@ -13,7 +13,7 @@ The `BlockNumberEnforcerAfter.sol` smart contract adds the ability to caveat aft
 
 # How It Works
 
-The `terms` field is expected to contain the `block.number`, after which, invocations will be valid. 
+The `terms` field is expected to contain the `block.number`, after which invocations will be valid. The `block.number` is passed as a `bytes8`.  
 
 ## Javascript Example
 
@@ -25,7 +25,7 @@ const delegation = {
   caveats: [
     {
       enforcer: BlockNumberEnforcerAfter.address,
-      // Transaction must be executed after block.number 10
+      // Transaction must be executed after block.number 0x32, which is 10 in decimal format.
       terms: '0x0000000000000032',
     },
     ],
