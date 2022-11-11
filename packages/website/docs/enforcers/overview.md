@@ -37,4 +37,4 @@ When signing a Transaction an Account is NOT able to enforce important run-time 
 
 For example a User may choose to use the `TimestampEnforcerBefore` and the `ERC20AllowanceEnforcer` enforcers to give a friend permission to spend up to `100 tokens` for the next `30 days`. 
 
-As long as the verifying contract inherits from `Delegatable.sol`, developerds can focus on what they do best, and write their own, custom made enforcers for their Dapps, and users' needs. 
+As long as the verifying contract inherits from `Delegatable.sol`, developerds can focus on what they do best, and write their own, custom made enforcers for their Dapps', and users' needs. 
