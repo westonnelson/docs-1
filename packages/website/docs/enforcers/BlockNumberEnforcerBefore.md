@@ -38,7 +38,7 @@ const delegation = {
 contract BlockNumberEnforcerBefore is CaveatEnforcer {
     /**
     * @notice Allows the delegator to specify the latest block the delegation will be valid.
-    * @param terms - The range of blocks this delegation is valid. See test for example.
+    * @param terms - The block before which the delegation is valid. See test for example.
     * @param transaction - The transaction the delegate might try to perform.
     * @param delegationHash - The hash of the delegation being operated on.
     */
