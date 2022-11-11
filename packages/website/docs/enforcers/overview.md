@@ -20,7 +20,7 @@ When signing a Transaction an Account is NOT able to enforce important run-time 
 - **SOLUTION:** The Delegatable framework's Caveat Enforcers enable nuanced run-time transaction execution rules that unlock these transaction signing **super powers**!
 
 
-## Enforcers
+## Examples of (primitive) Enforcers
 
 - [AllowedMethodsEnforcer](/docs/enforcers/AllowedMethodsEnforcer)
 - [BlockNumberEnforcerAfter](/docs/enforcers/BlockNumberEnforcerAfter)
@@ -36,3 +36,5 @@ When signing a Transaction an Account is NOT able to enforce important run-time 
 **Enforcers are designed to be composed together**. Possibly even multiple times in the same delegation.
 
 For example a User may choose to use the `TimestampEnforcerBefore` and the `ERC20AllowanceEnforcer` enforcers to give a friend permission to spend up to `100 tokens` for the next `30 days`. 
+
+Developerds can write their own, custom made enforcers.
