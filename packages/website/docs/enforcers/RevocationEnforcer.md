@@ -32,14 +32,14 @@ const delegation = {
 };
 ```
 
-### Javascript Example-2: revoking a delegation
+## Javascript Example-2: revoking a delegation
 
 ```js
 let tx = await revocationEnforcer.connect(delegator).revokeDelegation(signedDelegation, domainHash);
 await tx.wait(); 
 ```
 
-#### Smart Contract
+### Smart Contract
 
 ```solidity
 contract RevocationEnforcer is
