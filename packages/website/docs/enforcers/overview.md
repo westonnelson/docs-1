@@ -16,8 +16,8 @@ When signing a Transaction an Account is NOT able to enforce important run-time 
 
 #### Advanced Run-Time Rules missing from native EVM transactions:
 
-- If the transaction requires other on-chain state conditionals (`oracles`) to be true/false before executing. 
-- **SOLUTION**The Delegatable framework's Caveat Enforcers enable nuanced run-time transaction execution rules that unlock these transaction signing **super powers**!
+- **PROBLEM:** If the transaction requires other on-chain state conditionals (`oracles`) to be true/false before executing. 
+- **SOLUTION:** The Delegatable framework's Caveat Enforcers enable nuanced run-time transaction execution rules that unlock these transaction signing **super powers**!
 
 
 ## Enforcers
