@@ -13,7 +13,7 @@ The `AllowedMethodsEnforcer.sol` smart contract adds the ability to caveat on `F
 
 # How It Works
 
-The `terms` field is expected to contain the `FUNCTION_SELECTOR`, of the function the delegate is allowed to call. The delegator might allow more than one functions to be called by delegate - in such case insert the appropriate `FUNCTION_SELECTOR objects` in the `caveats[]`.
+The `terms` field is expected to contain the `FUNCTION_SELECTOR` of the specific function the delegate is allowed to call. In case he is allowed to call more than one functions, insert the appropriate `FUNCTION_SELECTOR objects` in the `caveats[]`.
 
 ## Javascript Example
 
