@@ -3,7 +3,7 @@ title: ERC20AllowanceEnforcer
 sidebar_label: ERC20AllowanceEnforcer
 ---
 
-We created an `ERC20Delegatable` contract (inherits from `ERC20` and `Delegatable`), to better illustrate the `Delegatable Framework`'s functionality. It provides `ERC20Permit`'s functionality, and then some - throught the use of `Enforcers`. 
+We created an `ERC20Delegatable` contract (inherits from `ERC20` and `Delegatable`), to better illustrate the `Delegatable Framework`'s `ERC20Permit`'s functionality, and then some - throught the use of `Enforcers`. 
 
 ## Deployments
 
