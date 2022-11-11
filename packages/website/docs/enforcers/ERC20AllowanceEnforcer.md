@@ -14,7 +14,7 @@ We created an `ERC20Delegatable` contract (inherits from `ERC20` and `Delegatabl
 # How It Works
 
 1. deploy an ERC20Delegatable contract
-2. approve delegates to spend on your behalf through `ERC20AllowanceEnforcer.sol`
+2. deploy an ERC20AllowanceEnforcer, through which delegators can approve delegates to spend on their behalf
 
 ## Smart Contracts
 ```solidity
