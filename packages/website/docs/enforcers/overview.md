@@ -22,7 +22,7 @@ When signing a Transaction an Account is NOT able to enforce important run-time 
 
 ## Examples of (primitive) Enforcers
 
-- [AllowedMethodsEnforcer](docs/packages/website/docs/enforcers/AllowedMethodsEnforcer.md)
+- [AllowedMethodsEnforcer](/docs/enforcers/AllowedMethodsEnforcer)
 - [BlockNumberEnforcerAfter](/docs/enforcers/BlockNumberEnforcerAfter)
 - [BlockNumberEnforcerBefore](/docs/enforcers/BlockNumberEnforcerBefore)
 - [ERC20AllowanceEnforcer](/docs/enforcers/ERC20AllowanceEnforcer)
