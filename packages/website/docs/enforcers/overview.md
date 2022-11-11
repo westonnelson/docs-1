@@ -3,7 +3,11 @@ title: Caveat Enforcers
 sidebar_label: Overview
 ---
 
-Caveat Enforcers add run-time conditionals to EVM transactions.
+The original delegator delegates with `authority=0x00`. A delegation with `authority=0x00`, and no caveats, gives the delegate the same exact powers as the delegator. This means that if the contract is `Ownable`, the delegator just allowed the delegate to `transferOwnership`.
+
+In order for the original delegator to limit the delegate's powers, he needs to introduce caveats. Caveats are a set of contracts that act as constraints to the delegate's powers. If the delegator had set an `AllowedMethodsEnforcer` for a specific function (e.g. the `function setPurpose(string _newPurpose)`, then any attempt of the delegate to `transferOwnership` will fail. 
+
+What's even better? Caveat Enforcers add run-time conditionals to EVM transactions.
 
 **Native EVM transaction** can **NOT** enforce **when/how** the transaction is executed.
 
