@@ -45,7 +45,7 @@ The Delegatable framework uses off-chain `assertions` to unlock on-chain access 
 
 In other words, it's not possible to look at the blockchain, and _discover_ what accounts, have what permissions, because the `state` is only known to the involved parties; **opposite to most of today's EVM based access control systems.**
 
-If the permission is not intended to be executed in the immediate future, than most smart contracts will use an on-chain delegation system, for managing access controls. While,this is a perfectly fine approach, it does have it's limitations. Plus, the conditional logic operators (timestamp, blockNumber, etc..) has to be included at protocol smart contract level, which is not ideal, if we're striving for modularity and separation of concerns. **And, _yes_, we are striving for modularity and separation of concerns.**
+If the permission is not intended to be executed in the immediate future, than most smart contracts will use an on-chain delegation system, for managing access controls. While,this is a _perfectly fine approach_, it does have limitations. Plus, the conditional logic operators (timestamp, blockNumber, etc..) have to be included at protocol smart contract level, which is not ideal, if we're striving for modularity and separation of concerns. **And, _yes_, we are striving for modularity and separation of concerns.**
 
 **Resources**
 

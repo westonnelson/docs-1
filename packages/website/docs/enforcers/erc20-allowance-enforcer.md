@@ -1,9 +1,9 @@
 ---
-title: ERC20AllowanceEnforcer
-sidebar_label: ERC20AllowanceEnforcer
+title: ERC20Allowance eEnforcer
+sidebar_label: ERC20Allowance
 ---
 
-We created an `ERC20Delegatable` contract (inherits from `ERC20` and `Delegatable`), to better illustrate the `Delegatable Framework`'s `ERC20Permit`'s functionality, and then some - throught the use of `Enforcers`. 
+We created an `ERC20Delegatable` contract (inherits from `ERC20` and `Delegatable`), to better illustrate the `Delegatable Framework`'s `ERC20Permit`'s functionality, and then some - through the use of `Enforcers`.
 
 ## Deployments
 
@@ -17,6 +17,7 @@ We created an `ERC20Delegatable` contract (inherits from `ERC20` and `Delegatabl
 2. deploy an ERC20AllowanceEnforcer, through which delegators can approve delegates to spend on their behalf
 
 ## Smart Contracts
+
 ```solidity
 contract ERC20Delegatable is ERC20, Delegatable {
     constructor(
@@ -81,6 +82,7 @@ contract ERC20AllowanceEnforcer is CaveatEnforcer {
 }
 
 ```
+
 ## Javascript Example
 
 ```js
@@ -91,12 +93,8 @@ const delegation = {
   caveats: [
     {
       enforcer: ERC20AllowanceEnforcer.address,
-      terms: ethers.utils.hexZeroPad(
-            utils.parseEther("0.5").toHexString(),
-            32
-          ),
+      terms: ethers.utils.hexZeroPad(utils.parseEther('0.5').toHexString(), 32),
     },
-    ],
+  ],
 };
 ```
-

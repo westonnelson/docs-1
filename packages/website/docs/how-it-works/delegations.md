@@ -5,17 +5,31 @@ sidebar_label: Delegations
 
 A `Delegation` grants authority to a third-party wallet to act on behalf of the signing wallet.
 
-- **Delegate**: Address receiving delegated permissions/authority.
-- **Authority**: ...
+- **Delegate**: Address receiving delegated permissions/capabilities.
+- **Authority**: Hash of previous delegation in a chained delegation.
 - **Caveats**: Rules and caveats limiting a delegated addresses permissions.
 
-When first learning about the Delegatable the two most important parameters are `delegate` and `caveats`.
+When first learning about the Delegatable the two most important parameters are `delegate` and `caveats`. The `authority` field will be used later, as we begin to chain delegations.
+
+Delegations allow Accounts to counter-factually sign delegations (i.e. access controls) to third-party Accounts, to act on their behalf. In other words if Account A signs a delegation to Account B, when Account B submits the transaction, it will be executed as if Account A had submitted the transaction.
 
 :::warning
 
 Without any `caveats` the third-party has full `permissions` of the signing wallet.
 
 :::
+
+**The approach is fundamentally different from on-chain access controls today.** Normally Account A would update a smart contract registry, allowing Account B to act on behalf of Account A... **and not acting as if they were Account A**.
+
+### Delegatable Adapters
+
+To use the Delegatable.sol framework it must be inherited. Contracts previously deployed CAN NOT take advantage of Delegatable unless an Adapter is created. Adapters can be used to either wrap existing contracts or act as middleware in certain architectures.
+
+For example, any `ERC20` token can be upgraded using an `ERC20Delegatable` wrapper smart contract. Similar to how Wrapper ETH works, the underlying token would be locked, and an upgraded `ERC20Delegatable` would be unlocked with an equal balance.
+
+If you have a specific adapter you would like to see created please create submit an issue.
+
+https://github.com/delegatable/delegatable-sol/issues
 
 # A Full Delegation and Invocation Flow
 
@@ -106,10 +120,4 @@ const txReceipt = await contract.invoke([
     },
   ],
 ]);
-```
-
-### Javascript
-
-```
-
 ```

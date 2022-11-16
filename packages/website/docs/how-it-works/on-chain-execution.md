@@ -3,12 +3,14 @@ title: On-Chain Execution
 sidebar_label: On-Chain Execution
 ---
 
-### Getting Started
+## Getting Started
 
-The Delegatable smart contracts must be inherited in order to utilize the counterfactual delegation. In other words, the smart contracts are not intended to be used as `library` or in a `proxy` pattern. Additionally the commonly used `_msgSender()` must be overwritten; adding unique features to extract a root authority address used in a delegation chain.
+The Delegatable smart contracts must be inherited in order to utilize the counterfactual delegation. The smart contracts are not intended to be used as `library` or in a `proxy` pattern. The commonly used `_msgSender()` method must also be overwritten.
+
+#### Important Reminders
 
 - Delegatable smart contract **must** be inherited.
-- The `_msgSender` method **must** be overridden.
+- The `_msgSender()` method **must** be overridden.
 
 ```solidity
 import { Delegatable } from "@delegatable/core-sol";
@@ -40,9 +42,9 @@ contract ExampleContract is Delegatable {
 }
 ```
 
-## Invocations - Executing a Delegation
+## Invocations (Executing a Delegation)
 
-The primary function/method exposed by the Delegatable framework is the `invoke` method.
+The primary method exposed by the Delegatable framework is the `invoke` method.
 
 ```solidity
 function invoke(SignedInvocation[] calldata signedInvocations) external returns (bool success);
@@ -69,6 +71,12 @@ ExampleContract.sol **after** inheriting Delegatable.sol
 
 ### How Invocations Work
 
+Invocations are very similar to normal transactions. Including core fields like `data` and `value` which are part of every transaction.
+
+But wrapped around those core fields is a signing schema to enable flexible transaction execution conditionals.
+
+As mentioned in the [Introduction/Why](/docs/why) page it's somewhat odd, protocols like Uniswap have to include blockNumber deadlines in an Automated Market Making (AMM) protocol. The Delegatable framework introduces a unique EIP712 signing schema to enable transaction execution conditionals at a new part of the EVM stack.
+
 ```sol
 function invoke(SignedInvocation[] calldata signedInvocations)
     external
@@ -88,3 +96,5 @@ function invoke(SignedInvocation[] calldata signedInvocations)
     }
 }
 ```
+
+The `invoke` function ingests `SignedInvocation`, which are wrapping `Delegations` containing transaction execution conditional rule-sets. Makes perfect sense right 😅 not too worry though if that sounds like an empty world salad, with more examples, it will start to make sense.

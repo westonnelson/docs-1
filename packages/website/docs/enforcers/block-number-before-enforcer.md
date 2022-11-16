@@ -1,9 +1,9 @@
 ---
-title: BlockNumberEnforcerBefore
-sidebar_label: BlockNumberEnforcerBefore
+title: BlockNumberBefore Enforcer
+sidebar_label: BlockNumberBefore
 ---
 
-The `BlockNumberEnforcerBefore.sol` smart contract adds the ability to caveat before `block.numbers`. 
+The `BlockNumberBeforeEnforcer.sol` smart contract adds the ability to caveat before `block.numbers`.
 
 ## Deployments
 
@@ -13,7 +13,7 @@ The `BlockNumberEnforcerBefore.sol` smart contract adds the ability to caveat be
 
 # How It Works
 
-The `terms` field is expected to contain the `block.number`, after which invocations will not be valid. The `block.number` is passed as a `bytes8`.  
+The `terms` field is expected to contain the `block.number`, after which invocations will not be valid. The `block.number` is passed as a `bytes8`.
 
 ## Javascript Example
 
@@ -24,18 +24,18 @@ const delegation = {
     '0x0000000000000000000000000000000000000000000000000000000000000000',
   caveats: [
     {
-      enforcer: BlockNumberEnforcerBefore.address,
+      enforcer: BlockNumberBeforeEnforcer.address,
       // Transaction must be executed before block.number 0x32, which is 10 in decimal format.
       terms: '0x0000000000000032',
     },
-    ],
+  ],
 };
 ```
 
 ### Smart Contract
 
 ```solidity
-contract BlockNumberEnforcerBefore is CaveatEnforcer {
+contract BlockNumberBeforeEnforcer is CaveatEnforcer {
     /**
     * @notice Allows the delegator to specify the latest block the delegation will be valid.
     * @param terms - The block before which the delegation is valid. See test for example.
@@ -51,7 +51,7 @@ contract BlockNumberEnforcerBefore is CaveatEnforcer {
         if (blockThreshold > block.number) {
             return true;
         } else {
-            revert("BlockNumberEnforcerBefore:expired-delegation");
+            revert("BlockNumberBeforeEnforcer:expired-delegation");
         }
     }
 }

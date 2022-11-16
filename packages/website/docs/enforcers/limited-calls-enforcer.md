@@ -1,9 +1,9 @@
 ---
-title: LimitedCallsEnforcer
-sidebar_label: LimitedCallsEnforcer
+title: LimitedCalls Enforcer
+sidebar_label: LimitedCalls
 ---
 
-The `LimitedCallsEnforcer.sol` smart contract gives the delegator the flexibility to pre-set how many times his delegate is allowed to repeat a specific action. 
+The `LimitedCallsEnforcer.sol` smart contract gives the delegator the flexibility to pre-set how many times his delegate is allowed to repeat a specific action.
 
 ## Deployments
 
@@ -26,9 +26,10 @@ const delegation = {
     {
       enforcer: LimitedCallsEnforcer.address,
       // in terms delegator specifies what the max number of calls is (e.g. 2)
-      terms: '0x0000000000000000000000000000000000000000000000000000000000000002',
+      terms:
+        '0x0000000000000000000000000000000000000000000000000000000000000002',
     },
-    ],
+  ],
 };
 ```
 

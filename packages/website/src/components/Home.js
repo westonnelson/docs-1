@@ -402,9 +402,7 @@ function Home() {
                 <img
                   className="relative mx-auto rounded-lg shadow-lg image-rendering-crisp"
                   src={withBaseUrl(
-                    `img/assets/${
-                      isDarkTheme ? 'docsearch-shadow-dark' : 'docsearch-shadow'
-                    }.png`
+                    `img/${isDarkTheme ? 'demo-enforcer' : 'demo-enforcer'}.png`
                   )}
                   alt="docsearch-modal"
                 />
@@ -501,7 +499,13 @@ function Home() {
                   <img
                     className="relative mx-auto"
                     width="490"
-                    src={withBaseUrl('img/assets/anatomy.svg')}
+                    src={withBaseUrl(
+                      `img/${
+                        isDarkTheme
+                          ? 'demo-delegatable-core'
+                          : 'demo-delegatable-core'
+                      }.png`
+                    )}
                     alt="anatomy-of-docsearch"
                   />
                 </div>

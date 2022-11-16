@@ -1,9 +1,9 @@
 ---
-title: BlockNumberEnforcerAfter
-sidebar_label: BlockNumberEnforcerAfter
+title: BlockNumberAfter Enforcer
+sidebar_label: BlockNumberAfter
 ---
 
-The `BlockNumberEnforcerAfter.sol` smart contract adds the ability to caveat after `block.numbers`. 
+The `BlockNumberAfterEnforcer.sol` smart contract adds the ability to caveat after `block.numbers`.
 
 ## Deployments
 
@@ -13,7 +13,7 @@ The `BlockNumberEnforcerAfter.sol` smart contract adds the ability to caveat aft
 
 # How It Works
 
-The `terms` field is expected to contain the `block.number`, after which invocations will be valid. The `block.number` is passed as a `bytes8`.  
+The `terms` field is expected to contain the `block.number`, after which invocations will be valid. The `block.number` is passed as a `bytes8`.
 
 ## Javascript Example
 
@@ -24,18 +24,18 @@ const delegation = {
     '0x0000000000000000000000000000000000000000000000000000000000000000',
   caveats: [
     {
-      enforcer: BlockNumberEnforcerAfter.address,
+      enforcer: BlockNumberAfterEnforcer.address,
       // Transaction must be executed after block.number 0x32, which is 10 in decimal format.
       terms: '0x0000000000000032',
     },
-    ],
+  ],
 };
 ```
 
 ### Smart Contract
 
 ```solidity
-contract BlockNumberEnforcerAfter is CaveatEnforcer {
+contract BlockNumberAfterEnforcer is CaveatEnforcer {
     /**
      * @notice Allows the delegator to specify the earliest block the delegation will be valid.
      * @param terms - The block, after which this delegation is valid. See test for example.
@@ -51,7 +51,7 @@ contract BlockNumberEnforcerAfter is CaveatEnforcer {
         if (blockThreshold < block.number) {
             return true;
         } else {
-            revert("BlockNumberEnforcerAfter:early-delegation");
+            revert("BlockNumberAfterEnforcer:early-delegation");
         }
     }
 }

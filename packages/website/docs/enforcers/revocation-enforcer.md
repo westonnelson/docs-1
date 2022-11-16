@@ -1,9 +1,9 @@
 ---
-title: RevocationEnforcer
-sidebar_label: RevocationEnforcer
+title: Revocation Enforcer
+sidebar_label: Revocation
 ---
 
-The `RevocationEnforcer.sol` smart contract allows the delegator (owner) to revoke his signed delegation immediately. 
+The `RevocationEnforcer.sol` smart contract allows the delegator (owner) to revoke his signed delegation immediately.
 
 ## Deployments
 
@@ -13,10 +13,10 @@ The `RevocationEnforcer.sol` smart contract allows the delegator (owner) to revo
 
 # How It Works
 
-1. The delegator needs to include the `RevocationEnforcer` caveat, in the (signed) delegation - otherwise he won't be able to revoke his delegation later. 
+1. The delegator needs to include the `RevocationEnforcer` caveat, in the (signed) delegation - otherwise he won't be able to revoke his delegation later.
 2. If the delegator decides to revoke the delegation, he needs to call `revocationEnforcer.revokeDelegation(signedDelegation, domainHash)`. He has to submit that tx himself.
 
-## Javascript Example-1: including the revocation caveat 
+## Javascript Example-1: including the revocation caveat
 
 ```js
 const delegation = {
@@ -28,15 +28,17 @@ const delegation = {
       enforcer: RevocationEnforcer.address,
       terms: '0x00',
     },
-    ],
+  ],
 };
 ```
 
 ## Javascript Example-2: revoking a delegation
 
 ```js
-let tx = await revocationEnforcer.connect(delegator).revokeDelegation(signedDelegation, domainHash);
-await tx.wait(); 
+let tx = await revocationEnforcer
+  .connect(delegator)
+  .revokeDelegation(signedDelegation, domainHash);
+await tx.wait();
 ```
 
 ### Smart Contract
@@ -129,4 +131,3 @@ contract RevocationEnforcer is
 }
 
 ```
-

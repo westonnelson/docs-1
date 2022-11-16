@@ -1,9 +1,9 @@
 ---
-title: AllowedMethodsEnforcer
-sidebar_label: AllowedMethodsEnforcer
+title: AllowedMethods Enforcer
+sidebar_label: AllowedMethods
 ---
 
-The `AllowedMethodsEnforcer.sol` smart contract adds the ability to caveat on `FUNCTION_SELECTOR`. 
+The `AllowedMethodsEnforcer.sol` smart contract adds the ability to caveat on `FUNCTION_SELECTOR`.
 
 ## Deployments
 
@@ -28,7 +28,7 @@ const delegation = {
       // below is the function selector of the `setPurpose(string)` function
       terms: '0xeb68757f',
     },
-    ],
+  ],
 };
 ```
 

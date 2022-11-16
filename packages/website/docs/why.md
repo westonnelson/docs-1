@@ -44,10 +44,10 @@ function swapTokensForExactTokens(
 
 <!-- You might be saying to yourself right about now _**"But why does that matter?"**_ -->
 
-With the Delegatable framework, a decentralized exchange (DEX) like Uniswap, could use the [BlockNumberEnforcer](/docs/enforcers/blocknumber) instead of including blockNumber deadlines at the application/protocol layer. Additionally Users could set **before, after** and **between** conditionals, instead of **just before**, without changing the core smart contract function logic.
+With the Delegatable framework, a decentralized exchange (DEX) like Uniswap, could use the [BlockNumberBefore Enforcer](/docs/enforcers/block-number-before-enforcer) instead of including blockNumber deadlines at the application/protocol layer. Additionally Users could set **before, after** and **between** conditionals, instead of **just before**, without changing the core smart contract function logic.
 
 _Why is this important, you might ask?_
 
 First, we have to ask the question "**Why does Uniswap have to enforce transaction-level access controls at all?**"
 
-It's actually kind'of odd that UniswapV2 is required to include blockNumber deadlines, in an AutomatedMarketMaker primitive when you think about it. Ultimately that's a decision, which should be made independently of the protocol; a be a power exclusive to the User signing and executing the transaction.
+It's actually kind'of odd that UniswapV2 is required to include blockNumber deadlines in an AutomatedMarketMaker primitive when you really think about it. Ultimately that's a decision, which should be made independently of the protocol. A power exclusive to the Account signing and executing the transaction.

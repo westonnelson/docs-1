@@ -1,9 +1,9 @@
 ---
-title: TimestampEnforcerAfter
-sidebar_label: TimestampEnforcerAfter
+title: TimestampBefore Enforcer
+sidebar_label: TimestampBefore
 ---
 
-The `TimestampEnforcerAfter.sol` smart contract adds the ability to caveat after `block.timestamp`. 
+The `TimestampBeforeEnforcer.sol` smart contract adds the ability to caveat before `timestamp`.
 
 ## Deployments
 
@@ -13,7 +13,7 @@ The `TimestampEnforcerAfter.sol` smart contract adds the ability to caveat after
 
 # How It Works
 
-The `terms` field is expected to contain the `timestamp`, after which invocations will be valid. The `timestamp` is passed as a `bytes8`.  
+The `terms` field is expected to contain the `timestamp`, after which invocations will not be valid. The `timestamp` is passed as a `bytes8`.
 
 ## Javascript Example
 
@@ -24,21 +24,21 @@ const delegation = {
     '0x0000000000000000000000000000000000000000000000000000000000000000',
   caveats: [
     {
-      enforcer: TimestampEnforcerAfter.address,
-      // Transaction must be executed after timestamp 0x00000007915eda10, which is 32503683600 in unix epoch timestamp 
+      enforcer: TimestampBeforeEnforcer.address,
+      // Transaction must be executed after timestamp 0x00000007915eda10, which is 32503683600 in unix epoch timestamp
       // (Wednesday, January 1, 3000 1:00:00 AM).
       terms: '0x00000007915eda10',
     },
-    ],
+  ],
 };
 ```
 
 ### Smart Contract
 
 ```solidity
-contract TimestampEnforcerAfter is CaveatEnforcer {
+contract TimestampBeforeEnforcer is CaveatEnforcer {
     /**
-     * @notice Allows the delegator to specify the earliest timestamp the delegation will be valid.
+     * @notice Allows the delegator to specify the latest timestamp the delegation will be valid.
      * @param terms - The latest timestamp this delegation is valid.
      * @param transaction - The transaction the delegate might try to perform.
      * @param delegationHash - The hash of the delegation being operated on.
@@ -48,13 +48,14 @@ contract TimestampEnforcerAfter is CaveatEnforcer {
         Transaction calldata transaction,
         bytes32 delegationHash
     ) public override returns (bool) {
-        uint64 timestampThreshold = BytesLib.toUint64(terms, 0);    
-        if (timestampThreshold < block.timestamp) {
+        uint64 timestampThreshold = BytesLib.toUint64(terms, 0);
+        if (timestampThreshold > block.timestamp) {
             return true;
         } else {
-            revert("TimestampEnforcerAfter:early-delegation");
+            revert("TimestampBeforeEnforcer:expired-delegation");
         }
-    
+
     }
 }
+
 ```

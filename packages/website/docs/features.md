@@ -42,16 +42,24 @@ How it works with Delegatable:
 
 _**Magic**_ 🪄 a Web of Trust is beginning to emerge.
 
-### Peer-to-Peer Access Controls
-
-**The Delegatable framework enables peer-to-peer, off-chain, counterfactual delegations.**
-
-People, trust and networks are emergent.
-
 ### Transaction Execution Conditionals (Caveat Enforcers)
+
+Core to the Delegatable framework is the ability to define **transaction execution conditionals**. Accounts can limit when and how a transaction is executed using existing and/or customer enforcers.
+
+Existing enforcers include:
+
+- Allowed Methods
+- BlockNumber
+- Timestamp
+- ERC20 Allowance
+- Revocation
 
 ### Meta-Transactions
 
+Meta-transactions, a technology pioneered at uPort/ConsenSys (CTO Christian Lundkvist), enables third-party accounts to pay gas costs for a transaction. The Delegatable framework includes a meta-transaction sub-system, so all Delegations are automatically meta-transaction compatible.
+
+Account signing a Delegation DO NOT have to submit and pay for the transaction.
+
 ### Non-Blocking Nonce Queues
 
-## Getting Help
+A challenge with today's EOA and Smart Wallet is the usage of single nonce. All transactions must be processed in sequential order. The Delegatable framework introduces horizontally scalable **nonce queues** to overcome the limitations of a single threaded account.

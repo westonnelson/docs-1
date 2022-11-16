@@ -8,11 +8,13 @@ The Delegatable Framework is under active development.
 **Do NOT use the smart contracts in production, until an audit has been completed.**
 
 - Github
-  - Smart Contracts
-  - Javascript Library
+  - [Smart Contracts](https://github.com/delegatable/delegatable-sol)
+  - [Javascript Library](https://github.com/delegatable/delegatable-eth)
 - NPM
-  - Smart Contracts
-  - Javascript Library
+  - Smart Contracts (Coming Soon)
+  - [Javascript Library](https://www.npmjs.com/package/eth-delegatable-utils)
+
+## Smart Contracts Git
 
 **Git HTTPS:**
 
@@ -24,6 +26,20 @@ git clone https://github.com/delegatable/delegatable-sol.git
 
 ```sh
 git clone git@github.com:delegatable/delegatable-sol.git
+```
+
+## Javascript + Monorepo Git
+
+**Git HTTPS:**
+
+```sh
+git clone https://github.com/delegatable/delegatable-eth.git
+```
+
+**Git SSH:**
+
+```sh
+git clone git@github.com:delegatable/delegatable-eth.git
 ```
 
 ## Contributing
