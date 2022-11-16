@@ -34,7 +34,7 @@
     "test": "jest",
     "watch": "lerna run watch --parallel --scope @docsearch/*",
     "website:build": "yarn workspace @docsearch/website build",
-    "website:start": "yarn workspace @docsearch/website star",
+    "website:start": "yarn workspace @docsearch/website start",
     "website:test": "yarn workspace @docsearch/website start --no-open"
   },
   "devDependencies": {
