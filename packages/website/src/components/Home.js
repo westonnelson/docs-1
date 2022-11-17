@@ -1,6 +1,21 @@
 import { Hero, Button, InlineLink } from '@algolia/ui-library';
 import { useColorMode } from '@docusaurus/theme-common';
 import { useBaseUrlUtils } from '@docusaurus/useBaseUrl';
+import {
+  AdjustmentsHorizontalIcon,
+  ArchiveBoxXMarkIcon,
+  BanknotesIcon,
+  BookOpenIcon,
+  ChartBarIcon,
+  ClockIcon,
+  CommandLineIcon,
+  CubeTransparentIcon,
+  PencilSquareIcon,
+  QueueListIcon,
+  ShieldCheckIcon,
+  UserGroupIcon,
+  WrenchScrewdriverIcon,
+} from '@heroicons/react/24/outline';
 import React from 'react';
 
 function Home() {
@@ -124,17 +139,7 @@ function Home() {
                   <div className="flex">
                     <div className="flex-shrink-0">
                       <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                        <svg
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          className="search w-6 h-6"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                            clipRule="evenodd"
-                          ></path>
-                        </svg>
+                        <UserGroupIcon className="w-6 h-6 stroke-2" />
                       </div>
                     </div>
                     <div className="ml-4">
@@ -152,19 +157,7 @@ function Home() {
                   <div className="flex">
                     <div className="flex-shrink-0">
                       <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                        <svg
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          className="user-group w-6 h-6"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                          ></path>
-                        </svg>
+                        <CubeTransparentIcon className="w-6 h-6 stroke-2" />
                       </div>
                     </div>
                     <div className="ml-4">
@@ -182,19 +175,7 @@ function Home() {
                   <div className="flex">
                     <div className="flex-shrink-0">
                       <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                        <svg
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          className="device-mobile w-6 h-6"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
-                          ></path>
-                        </svg>
+                        <BookOpenIcon className="w-6 h-6 stroke-2" />
                       </div>
                     </div>
                     <div className="ml-4">
@@ -239,10 +220,10 @@ function Home() {
                     <div className="flex items-center justify-center">
                       <img
                         className="h-200"
-                        src={withBaseUrl('img/assets/scraping.svg')}
+                        src={withBaseUrl('img/assets/off-chain-sign.svg')}
                         width="190px"
                         height="220px"
-                        alt="Scraping with Algolia Crawler"
+                        alt="Off-chain signatures"
                       />
                     </div>
                     <div className="mt-10 lg:mt-0 p-4">
@@ -262,10 +243,10 @@ function Home() {
                   <div className="mt-10 lg:mt-0 p-4">
                     <div className="h-200 flex items-center justify-center">
                       <img
-                        src={withBaseUrl('img/assets/configuration.svg')}
+                        src={withBaseUrl('img/assets/on-chain-revoke.svg')}
                         width="140px"
                         height="220px"
-                        alt="Configuration of your crawler"
+                        alt="On-chain revocations"
                       />
                     </div>
                     <div>
@@ -284,10 +265,10 @@ function Home() {
                   <div className="mt-10 lg:mt-0 p-4">
                     <div className="h-200 flex items-center justify-center">
                       <img
-                        src={withBaseUrl('img/assets/implementation.svg')}
-                        width="220px"
+                        src={withBaseUrl('img/assets/composable-rules.svg')}
+                        width="160px"
                         height="220px"
-                        alt="Implementation on your website"
+                        alt="Composable rules"
                       />
                     </div>
                     <div>
@@ -532,19 +513,7 @@ function Home() {
                     <div className="flex">
                       <div className="flex-shrink-0">
                         <div className="flex items-center justify-center h-12 w-12 rounded-md bg-white text-indigo-500">
-                          <svg
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            className="chip w-6 h-6"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"
-                            ></path>
-                          </svg>
+                          <ClockIcon className="w-6 h-6 stroke-2" />
                         </div>
                       </div>
                       <div className="ml-4">
@@ -563,19 +532,7 @@ function Home() {
                     <div className="flex">
                       <div className="flex-shrink-0">
                         <div className="flex items-center justify-center h-12 w-12 rounded-md  bg-white text-indigo-500">
-                          <svg
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            className="chat w-6 h-6"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-                            ></path>
-                          </svg>
+                          <AdjustmentsHorizontalIcon className="w-6 h-6 stroke-2" />
                         </div>
                       </div>
                       <div className="ml-4">
@@ -594,19 +551,7 @@ function Home() {
                     <div className="flex">
                       <div className="flex-shrink-0">
                         <div className="flex items-center justify-center h-12 w-12 rounded-md  bg-white text-indigo-500">
-                          <svg
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            className="chat w-6 h-6"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-                            ></path>
-                          </svg>
+                          <QueueListIcon className="w-6 h-6 stroke-2" />
                         </div>
                       </div>
                       <div className="ml-4">
@@ -629,19 +574,7 @@ function Home() {
                     <div className="flex">
                       <div className="flex-shrink-0">
                         <div className="flex items-center justify-center h-12 w-12 rounded-md bg-white text-indigo-500">
-                          <svg
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            className="backspace w-6 h-6"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M12 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2M3 12l6.414 6.414a2 2 0 001.414.586H19a2 2 0 002-2V7a2 2 0 00-2-2h-8.172a2 2 0 00-1.414.586L3 12z"
-                            ></path>
-                          </svg>
+                          <BanknotesIcon className="w-6 h-6 stroke-2" />
                         </div>
                       </div>
                       <div className="ml-4">
@@ -660,19 +593,7 @@ function Home() {
                     <div className="flex">
                       <div className="flex-shrink-0">
                         <div className="flex items-center justify-center h-12 w-12 rounded-md bg-white text-indigo-500">
-                          <svg
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            className="chart-bar w-6 h-6"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                            ></path>
-                          </svg>
+                          <ChartBarIcon className="w-6 h-6 stroke-2" />
                         </div>
                       </div>
                       <div className="ml-4">
@@ -691,19 +612,7 @@ function Home() {
                     <div className="flex">
                       <div className="flex-shrink-0">
                         <div className="flex items-center justify-center h-12 w-12 rounded-md bg-white text-indigo-500">
-                          <svg
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            className="chart-bar w-6 h-6"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                            ></path>
-                          </svg>
+                          <WrenchScrewdriverIcon className="w-6 h-6 stroke-2" />
                         </div>
                       </div>
                       <div className="ml-4">
@@ -747,19 +656,7 @@ function Home() {
                   <div className="flex">
                     <div className="flex-shrink-0">
                       <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                        <svg
-                          className="h-6 w-6"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
-                          />
-                        </svg>
+                        <UserGroupIcon className="w-6 h-6 stroke-2" />
                       </div>
                     </div>
                     <div className="ml-4">
@@ -781,19 +678,7 @@ function Home() {
                   <div className="flex">
                     <div className="flex-shrink-0">
                       <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                        <svg
-                          className="h-6 w-6"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
-                          />
-                        </svg>
+                        <ShieldCheckIcon className="w-6 h-6 stroke-2" />
                       </div>
                     </div>
                     <div className="ml-4">
@@ -816,19 +701,7 @@ function Home() {
                   <div className="flex">
                     <div className="flex-shrink-0">
                       <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                        <svg
-                          className="h-6 w-6"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"
-                          />
-                        </svg>
+                        <PencilSquareIcon className="w-6 h-6 stroke-2" />
                       </div>
                     </div>
                     <div className="ml-4">
@@ -850,19 +723,7 @@ function Home() {
                   <div className="flex">
                     <div className="flex-shrink-0">
                       <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                        <svg
-                          className="h-6 w-6"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"
-                          />
-                        </svg>
+                        <ArchiveBoxXMarkIcon className="w-6 h-6 stroke-2" />
                       </div>
                     </div>
                     <div className="ml-4">
