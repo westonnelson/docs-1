@@ -2,7 +2,7 @@
   "name": "@docsearch/website",
   "version": "3.2.1",
   "private": true,
-  "homepage": "https://docsearch.algolia.com/",
+  "homepage": "https://delegatable.org",
   "scripts": {
     "build:clean": "rm -rf dist build .docusaurus node_modules",
     "docusaurus": "docusaurus",

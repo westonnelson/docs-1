@@ -47,7 +47,7 @@ const lightCodeTheme = require('prism-react-renderer/themes/github');
       ({
         algolia: {
           appId: 'R2IYF7ETH7',
-          apiKey: '',
+          apiKey: '599cec31baffa4868cae4e79f180729b',
           indexName: 'docsearch',
           contextualSearch: true,
         },
