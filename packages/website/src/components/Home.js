@@ -53,7 +53,7 @@ function Home() {
           </Button>,
           <Button
             key="apply"
-            href={withBaseUrl('docs/concept/object-capabilities')}
+            href={withBaseUrl('/docs/counterfactual-delegation')}
             background="orange"
             color="white"
             className="apply-button"
