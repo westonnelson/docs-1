@@ -6,10 +6,10 @@ const lightCodeTheme = require('prism-react-renderer/themes/github');
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 (
   module.exports = {
-    title: 'Delegtable',
+    title: 'Delegatable',
     tagline:
       'Solidity framework for extending smart contracts with counterfactual revocable-delegation',
-    url: 'https://docsearch.algolia.com',
+    url: 'https://delegatable.org',
     baseUrl: '/',
     favicon: 'img/favicon.ico',
     organizationName: 'Delegatable',
@@ -47,7 +47,7 @@ const lightCodeTheme = require('prism-react-renderer/themes/github');
       ({
         algolia: {
           appId: 'R2IYF7ETH7',
-          apiKey: '599cec31baffa4868cae4e79f180729b',
+          apiKey: '',
           indexName: 'docsearch',
           contextualSearch: true,
         },
